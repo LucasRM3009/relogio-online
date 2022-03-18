@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    min-height: 100vh;
+
+    font-family: 'Rubik', 'Open Sans', sans-serif;
+    font-size: 1em;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#relogio {
+    margin: 90px 10px 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#relogio h1 {
+    position: relative;
+    display: block;
+
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.2em;
+    color: rgba(238, 238, 238, 0.897);
+
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.445);
+
+    word-wrap: break-word;
+
+    margin-bottom: 40px;
+}
+
+#relogio #horario {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    text-shadow: 1px 1px white, -1px -1px #444;
+}
+
+#relogio #horario div {
+    position: relative;
+
+    margin: 10px;
+}
+
+#relogio #horario div span {
+    position: relative;
+    display: block;
+
+    width: 150px;
+    height: 150px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 4em;
+    font-weight: bold;
+    color: rgba(238, 238, 238, 0.897);
+
+    background-color: rgb(6, 147, 190);
+
+    box-shadow: 0 0 0 1px rgba(39, 39, 39, 0.2);
+
+    z-index: 10;
+}   
+
+#relogio #horario div span:nth-child(2) {
+    height: 30px;
+
+    font-size: 0.7em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+
+    background-color: rgb(10, 127, 163);
+    
+    box-shadow: none;
+
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.384);
+
+    z-index: 9;
+}
+
+#relogio #horario div:last-child span{
+    background: #ff006a;
+}
+#relogio #horario div:last-child span:nth-child(2){
+    background: #ec0062;
+}
+
+ /* RODAPE PRINCIPAL */
+
+.rodapePrincipal {
+    width: 100%;
+
+    margin: 100px 0 0;
+
+    position: absolute;
+    bottom: 0;
+}
+
+.rodapePrincipal p {
+    font-size: .85em;
+    font-weight: normal;
+    text-align: center;
+    line-height: 1.5;
+    color: rgb(235, 235, 235);
+
+    text-shadow: 0 1px 0 rgb(5, 72, 114);
+    
+    padding: 25px;
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 375px) {
+    #relogio {
+        margin: 50px 10px 0;
+    }
+
+    #relogio h1 {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .rodapePrincipal {
+        position: relative;
+    }
+}

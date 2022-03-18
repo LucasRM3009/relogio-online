@@ -20,7 +20,7 @@ function mudaImagem(horas) {
             inserirImagem('afternoon-sunshine_17-18.jpg');
         }
     } else if (horas >= 17 && horas < 24) {
-        inserirImagem('afternoon-sunshine_1-18.jpg');
+        inserirImagem('afternoon-sunshine_17-18.jpg');
         
         if (horas > 18 && horas < 23) {
             inserirImagem('night_19-22.jpg');

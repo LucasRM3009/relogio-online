@@ -1,32 +1,15 @@
 function inserirImagem(url) {
-    document.body.style.backgroundImage = `url('./img/${url}')`;
+    document.body.style.backgroundImage = `url('./img/${url}.jpg')`;
 }
 
 function mudaImagem(horas) {
-    if (horas >= 6 && horas < 12) {
-        inserirImagem('morning-sun_6-8.jpg');  
+    const horaMinima = [6,9,11,16,18,19,0]
+    const horaMaxima = [8,10,15,17,18,23,5]
 
-        if (horas > 8 && horas < 11) {
-            inserirImagem('morning-sun_9-10.jpg');
-        } else if (horas >= 11) {
-            inserirImagem('morning-sun_11-15.jpg');
-        }
-    } else if (horas >= 12 && horas < 18) {
-        inserirImagem('morning-sun_11-15.jpg');
-        
-        if (horas > 15 && horas < 17) {
-            inserirImagem('afternoon-sunshine_15-17.jpg');            
-        } else if (horas >= 17){
-            inserirImagem('afternoon-sunshine_17-18.jpg');
-        }
-    } else if (horas >= 17 && horas < 24) {
-        inserirImagem('afternoon-sunshine_17-18.jpg');
-        
-        if (horas > 18 && horas < 23) {
-            inserirImagem('night_19-22.jpg');
-        }
-    } else {
-        inserirImagem('night_23-5.jpg');
+    for (let i = 0; i < horaMaxima.length; i++) {
+        if (horas >= horaMinima[i] && horas <= horaMaxima[i]) {
+            inserirImagem(`hora${i}`)
+        }        
     }
 }
 
@@ -50,8 +33,10 @@ function relogio() {
     hora = checkTime(hora);
     min = checkTime(min);
     sec = checkTime(sec);
-    
+
     mudaImagem(hora);
+
+    if (hora == 0) hora = 24 
     
     spanHora.innerHTML = hora;
     spanMinuto.innerHTML = min;
